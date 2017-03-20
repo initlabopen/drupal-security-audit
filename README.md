@@ -19,12 +19,12 @@ There are 10 steps to Drupal site security audit as performed by our team https:
 
 # 1. Website isolation
 
-We need to isolate the website to avoid changing files and database while performing the audit. Skip this step and you may end up with more files containing malicious code when there were at the outset.
+We need to isolate the website to avoid changing files and database while performing the audit. Skip this step and you may end up with more files containing malicious code than there were at the outset.
 
 There are two typical isolation options:
 
 * a docker container;
-* or a virtual server.
+* a virtual server.
 
 Pick any you like, they are much the same from the point of view of results achieved.
 
@@ -39,9 +39,9 @@ My personal grand prix goes to AI-Bolit, since it does a better job finding mali
 
 # 3. Search for changes in Drupal core and modules
 
-To search for changes in Drupal core and modules, we install hacked + diff module (manually or via drush) and launch it to get a report. Important: hacked module does not scan sites/all/libraries directory, so you should check it manually.
+To search for changes in Drupal core and modules, we install hacked + diff module (manually or via drush) and launch it to get a report.
 
-Here is how you can do that:
+Important: hacked module does not scan sites/all/libraries directory, so you should check it manually. Here is how you can do that:
 
 1. download the library;
 1. launch diff:
@@ -128,8 +128,8 @@ SELECT * FROM users WHERE name='drupaldev';
 SELECT * FROM users WHERE name='drupdev';
 ```
 # 10. Checking web server settings
-Web server environment for a Drupal website is a yet another topic covered excessively online. At drupal.org there are many articles dealing with Drupal security: https://www.drupal.org/security/secure-configuration
+Web server environment for a Drupal website is a yet another topic covered excessively online. At drupal.org, there are many articles dealing with Drupal security: https://www.drupal.org/security/secure-configuration
 
 We check the following:
 1. owner and permissions (find recommendations here: https://www.drupal.org/node/244924)
-1. PHP files execution possibility from /sites/default/files (find recommendations here: https://www.drupal.org/node/615888)
+1. Possibility of PHP files execution from /sites/default/files (find recommendations here: https://www.drupal.org/node/615888)
